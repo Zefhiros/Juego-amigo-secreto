@@ -15,3 +15,23 @@ function agregarAmigo() {
   });
   document.getElementById("inputAmigo").value = ""; // Limpia el input
 }
+function mostrarListaAmigos() {
+    const lista = document.getElementById("listaAmigos"); // Obtener el elemento de la lista
+    lista.innerHTML = ""; // Limpiar la lista existente
+    for (let i = 0; i < amigos.length; i++) { // Iterar sobre el arreglo
+        const li = document.createElement("li"); // Creo elemento <li>
+        li.textContent = amigos[i]; // Asigno el nombre del amigo
+        lista.appendChild(li); // Agregar el <li> a la lista
+    }
+}
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("No hay amigos para sortear.");
+        return;
+    }
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[indiceAleatorio];
+    document.getElementById("resultado").innerHTML = `<li>¡Felicidades! Su amigo sorteado es: ${amigoSorteado}</li>`;{ 
+         return;
+    }
+}  
